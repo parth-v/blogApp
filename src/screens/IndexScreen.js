@@ -5,9 +5,17 @@ import { Fontisto, Entypo } from '@expo/vector-icons';
 
 const IndexScreen = ({ navigation }) => {
 	const { state, deleteBlogPost, getBlogPosts } = useContext(Context);
-
+	
 	useEffect(() => {
 		getBlogPosts();
+		
+		const listener = navigation.addListener('didFocus', () => {
+			getBlogPosts(); 	
+		});	
+
+		return () => {
+			listener.remove();
+		};
 	}, []);
 
 	return (
@@ -18,7 +26,7 @@ const IndexScreen = ({ navigation }) => {
 				renderItem={({ item }) => {
 					return (
 						<TouchableOpacity 
-							onPress={() => navigation.navigate('Show',{ id: item.id }) }
+							onPress={() => 	navigation.navigate('Show',{ id: item.id }) }
 						>
 							<View style={styles.blogListContainer} >
 								<Text style={styles.blogText}>{item.title} - {item.id}</Text>
