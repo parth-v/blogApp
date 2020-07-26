@@ -23,7 +23,7 @@
     "react-navigation-stack": "^2.8.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "babel-preset-expo": "~8.1.0"
   },
   "private": true
