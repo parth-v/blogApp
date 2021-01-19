@@ -1,3 +1,3 @@
-# blogApp
+# Blog App
 
-A simple blog app which lets users manage and update their blogs! Made using react native!
+A basic blog app made using react-native which allows users to create and manage their blogs!
